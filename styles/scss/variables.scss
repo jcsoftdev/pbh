@@ -1,0 +1,49 @@
+$font-family-roboto: "Roboto", "Helvetica", system-ui, -apple-system, "Segoe UI",
+  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-lato: "Lato", "Open Sans", system-ui, -apple-system, "Segoe UI",
+  "Roboto", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+/* Breakpoints */
+// This are general breakpoints for almost all browsers
+$mobileDevice: 360px;
+$tabletDevice: 768px;
+$desktopDevice: 992px;
+
+$mobileDeviceUp: 360px;
+$tabletDeviceUp: 768px;
+$desktopDeviceUp: 992px;
+$mobileDeviceDown: 359.9px;
+$tabletDeviceDown: 767.9px;
+$desktopDeviceDown: 991.9px;
+
+$mobileMax: 767px;
+$tabletMin: 768px;
+$tabletMax: 1023px;
+$desktopMin: 1024px;
+
+$screen-sm-min: 576px;
+// Use wisely avoiding overwriting rules on mediaqueries
+// use this mixins in scss files like this way  : "@include isMobile { padding: 0 20px;}"
+
+// Small devices
+@mixin isMobile {
+  @media (max-width: #{$mobileMax}) {
+    @content;
+  }
+}
+
+// Medium devices like Tablets
+@mixin isTablet {
+  @media (min-width: #{$tabletMin}) and (max-width: #{$tabletMax}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin isDesktop {
+  @media (min-width: #{$desktopMin}) {
+    @content;
+  }
+}

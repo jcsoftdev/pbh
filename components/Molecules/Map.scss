@@ -1,0 +1,54 @@
+.map-container {
+  height: calc(100vh - 88px);
+  box-sizing: border-box;
+}
+
+.donated {
+max-width: 400px;
+text-align: center;
+color: red;
+font-size: 1.8em;
+}
+
+p.donated {
+font-size: 1.5em;
+
+}
+
+h3.available {
+color: rgba(2, 179, 2, 0.932);
+font-size: 1.8em;
+font-weight: 700;
+max-width: 400px;
+text-align: center;
+}
+
+p.available {
+color: rgba(2, 179, 2, 0.568);
+font-size: 1.5em;
+font-weight: 500;
+max-width: 400px;
+text-align: justify;
+}
+
+.donorName {
+color: grey;
+font-size: 1.2em;
+text-align: center;
+}
+
+.donorName a{
+text-decoration: none;
+color: rgb(126, 126, 126);
+opacity: .85;
+}
+
+.donor_button {
+display: inline-block;
+/* background-color: rgba(2, 179, 2, 0.644); */
+margin-top: .5em;
+padding: .5em;
+border: 1px solid rgba(2, 179, 2, 0.644);
+border-radius: .81em;
+font-size: .90em;
+}

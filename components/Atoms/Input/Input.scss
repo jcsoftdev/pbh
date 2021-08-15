@@ -1,0 +1,50 @@
+
+
+.group{
+  width: 100%;
+  /* margin-bottom:15px; */
+  padding: 10px;
+}
+.group .label,
+.group .input, .group textarea{
+	width:100%;
+	color:black;
+  display:block;
+  
+}
+.group .input, .group textarea{
+	border:none;
+	padding:15px 20px;
+	border-radius:10px;
+  background:$orange-15;
+  transition: all .26s ease;
+  outline: none;
+  height: 60px;
+  font-size: 1.5rem;
+}
+.group .input:focus{
+  border-bottom: 2px solid $purple;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.group textarea{
+  height: 100px;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.group .label{
+  text-transform:uppercase;
+  padding-left: 1rem;
+  font-size:16px;
+  color: $purple;
+}
+@media (min-width: 768px){
+  .dm-6{
+    width: 50%;
+  }
+}
