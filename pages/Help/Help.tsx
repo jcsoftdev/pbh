@@ -1,10 +1,9 @@
-import React from 'react'
+import HelpComponent from '@components/Organisms/Help';
+import React from 'react';
 
 const Help = () => {
   return (
-    <div>
-      <h1>siiiiiiiiiiiiiiiiiiiiiiiiiiii</h1>
-    </div>
+      <HelpComponent/>
   )
 }
 

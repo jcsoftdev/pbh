@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useHistory } from "react-router-dom";
 import Input from "../../Atoms/Input";
 import Button from "../../Atoms/Button";
 import Modal from "../../Atoms/Modal";
@@ -47,7 +46,6 @@ const FormHelp = (props) => {
     },
     false
   );
-  const history = useHistory();
 
   const submit = async (e) => {
     e.preventDefault();
@@ -82,7 +80,6 @@ const FormHelp = (props) => {
       } else {
         setFooterMessage("Gracias por ayudar al necesitado");
         setTimeout(() => {
-          history.push("/");
         }, 1000);
         setError(false);
         setSuccess(true);

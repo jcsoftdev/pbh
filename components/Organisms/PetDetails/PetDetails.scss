@@ -1,0 +1,58 @@
+.petdetails {
+  &-title {
+    font-size: 34px;
+    line-height: 51px;
+    color: $purple;
+    text-transform: uppercase;
+  }
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+    column-gap: 55px;
+  }
+  &-figure {
+    margin: 0;
+    img {
+      width: 100%;
+      height: 600px;
+      max-height: 600px;
+      object-fit: cover;
+    }
+    &-alternatives {
+      display: flex;
+      justify-content:space-between;
+      gap: 33px;
+      img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        cursor: pointer;
+        &:hover {
+          transition: all ease .3s;
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(1.05);
+
+        }
+      }
+    }
+  }
+
+  &-name {
+    color: $orange;
+    font-size: 50px;
+    line-height: 75px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 55px;
+    line-height: auto;
+  }
+
+  &-description {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}

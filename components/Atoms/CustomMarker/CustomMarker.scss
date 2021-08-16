@@ -1,0 +1,25 @@
+.marker {
+  background-color: transparent;
+  background-position: center;
+  background-image: url(http://localhost:1337/uploads/mascota_adopcion_d0cda4344c.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  &-container {
+    display: none;
+  }
+}
+
+.marker.isPending {
+  background-image: url(http://localhost:1337/uploads/mascota_extraviada_8ab33caf77.svg);
+
+}
+
+.marker:hover {
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s;
+}

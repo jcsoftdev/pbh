@@ -1,0 +1,29 @@
+.popUp {
+  &-container {
+
+    display: none;
+  }
+  &Title {
+    color:$purple;
+    font-size: 1rem;
+    text-align: center;
+  }
+  &Description {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+  }
+
+}
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+  
+  column-gap: 35px;
+  justify-items: center;
+  margin-bottom: 1rem;
+}
+
+.alert-container {
+  display: flex;
+  justify-content: center;
+}

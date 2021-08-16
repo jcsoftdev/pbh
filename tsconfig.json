@@ -22,6 +22,12 @@
       "@components/*": [
         "components/*"
       ],
+      "@context/*": [
+        "context/*"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
       "pages/*": [
         "pages/*"
       ],

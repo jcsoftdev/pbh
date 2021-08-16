@@ -1,0 +1,15 @@
+.alert {
+  box-sizing: border-box;
+  border-left:2px solid $green;
+  border-right:2px solid $green;
+  background-color: #fff;
+  border-radius: 0px;
+  color: $green;
+  padding: 5px .75rem;
+  font-family: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+  // transform: rotateZ(45deg);
+}

@@ -3,53 +3,37 @@ import React, { useState, useEffect } from "react";
 import Map from "components/Molecules/Map";
 import FormHelp from "./FormHelp";
 import LoadingSpinner from "components/Atoms/LoadingSpinner";
-import { Marker } from '@react-google-maps/api';
+// import { Marker } from '@react-google-maps/api';
 
 import {images} from './data'
+import { CoordinatesType } from "@components/Molecules/types";
+import CustomMarker from "@components/Atoms/CustomMarker/CustomMarker";
+import useLocation from "hooks/useLocation";
+
 const Help = () => {
-  const [ coordinates, setCoordinates] = useState({
-    lat: "",
-    lng: "",
-  });
   // const [longitude, setLongitude] = useState({});
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const getLocation = () => {
-    if (navigator.geolocation) {
-      //check if geolocation is available
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setCoordinates({
-            lat: `${position.coords.latitude}`,
-            lng: `${position.coords.longitude}`,
-          });
-          // setLongitude(position.coords.longitude);
-          // console.log("mi coordenada", latitude);
-          setLoading(false);
-          setError(null);
-        },
-        (e) => {
-          setCoordinates({ lat: '-12.0681', lng: '-75.2106' });
-          setLoading(false);
-          // setError(e);
-        }
-      );
-      // setLoading(false);
-      return null;
-    } else {
-      new Error("No GPS founded");
-      setError(true);
-      setLoading(false);
-    }
-  };
-
+  const [pets, setPets] = useState([]);
+  const {coordinates, setCoordinates } = useLocation()
+  console.log('coo', coordinates)
   const handleLocation = (lat, lng) => {
     setCoordinates({ lat: lat, lng: lng });
   };
   useEffect(() => {
-    getLocation();
+    (async() => {
+      // try {
+      //   const data = await getPets()
+      //   console.log(data)
+      //   setPets(data)
+      //   setLoading(false)
+      // } catch (error) {
+      //   setLoading(false)
+      //   setError({ ...error})
+      // }
+      
+    })();
     return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -68,19 +52,21 @@ const Help = () => {
     return <LoadingSpinner asOverlay/>;
   }
   if (!loading && !error && coordinates) {
+    console.log('my coordinates', coordinates);
     return (
       <>
         <Map
+          center={coordinates}
+          zoom={10}
         >
-          <Marker 
-            position={{lat: -12.075498, lng: -77.032282}} 
+          {/* <CustomMarker 
+            position={coordinates}
             
             onLoad={()=>console.log('Cargué')}
             icon={images.helped}
-            />
+            /> */}
         </Map>
         <FormHelp
-          location={coordinates}
           handleLocation={handleLocation}
         />
       </>
